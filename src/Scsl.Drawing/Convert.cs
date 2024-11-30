@@ -16,19 +16,25 @@ public static class Convert
     /// <exception cref="FormatException">Thrown if the file format is not supported.</exception>
     public static Task<MemoryStream> ToWebpFormat(this IFormFile formFile, int quality = 75)
     {
-        // Checks if the file is valid
+        // Check if the input file is null and throw an exception if it is.
         ArgumentNullException.ThrowIfNull(formFile, nameof(formFile));
-        string[] contentTypesExtensions = [".png", ".jpeg", ".webp", ".jpg"];
-        if (!contentTypesExtensions.Contains(formFile.ContentType.ToLowerInvariant()))
-            throw new FormatException("File format is not supported.");
-        
+
+        // Ensure the file is an image by checking its Content-Type; throw an exception if not.
+        if (!formFile.ContentType.StartsWith("image/")) throw new FormatException("File format is not supported.");
+
+        // Create a MemoryStream to hold the output WebP image data.
         var ms = new MemoryStream();
+
+        // Load the input image from the provided IFormFile stream.
         using var image = Image.Load(formFile.OpenReadStream());
-        //Convert the image to webp format
+
+        // Convert the loaded image to WebP format with the specified quality.
         Task.FromResult(image.SaveAsWebpAsync(ms, new WebpEncoder() { Quality = quality }));
-        //Rest the MemoryStream back to zero
+
+        // Reset the MemoryStream position to the beginning so it can be read later.
         ms.Position = 0;
-        
+
+        // Return the MemoryStream wrapped in a Task for async compatibility.
         return Task.FromResult(ms);
     }
 }
