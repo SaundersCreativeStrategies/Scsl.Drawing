@@ -1,0 +1,9 @@
+{
+    "solution": {
+        "path": "Scsl.Drawing.sln",
+        "projects": [
+            "src\\Scsl.Drawing\\Scsl.Drawing.csproj",
+			"tests\\Scsl.Drawing.UnitTest\\Scsl.Drawing.UnitTest.csproj"
+        ]
+    }
+}

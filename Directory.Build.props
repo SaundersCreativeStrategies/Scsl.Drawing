@@ -1,0 +1,42 @@
+<Project>
+    <PropertyGroup>
+        <Authors>Shane Saunders</Authors>
+        <Company>Saunders Creative Strategies Limited {SCS}</Company>
+        <Copyright>Copyright © 2023-2024. Saunders Creative Strategies Limited {SCS}. All Rights Reserved.</Copyright>
+
+        <NoWarn>CS1591</NoWarn>
+    </PropertyGroup>
+	
+	<UsingTask TaskName="Task.BuildVersion" AssemblyFile="MrGeek.Build.Utilities.dll" />
+
+    <PropertyGroup Condition ="'$(Configuration)' == 'Release'">
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        
+        <PackageProjectUrl>https://github.com/scsl/Scsl.Drawing</PackageProjectUrl>
+        <PackageTags>convert images, webp, png, jpg, jpeg</PackageTags>
+
+        <PackageDescription>
+            This library leverages the SixLabors.ImageSharp.Web library to efficiently convert PNG, JPG, and JPEG images into the WebP format.
+        </PackageDescription>
+        
+        <RepositoryUrl>https://github.com/scsl/Scsl.Drawing.git</RepositoryUrl>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        
+        <PackageIcon>scs-logo-600x600.png</PackageIcon>
+        <PackageIconUrl>http://asparatu.net/images/scs-logo-600x600.png</PackageIconUrl>
+
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    </PropertyGroup>
+
+    <ItemGroup Condition="'$(Configuration)' == 'Release'">
+        <None Include="../../images/scs-logo-600x600.png" Pack="true" PackagePath="\" />
+        <None Include="../../docs/README.md" Pack="true" PackagePath="\" />
+        <None Include="../../LICENSE" Pack="true" PackagePath="" />
+    </ItemGroup>
+</Project>

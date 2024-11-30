@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A751A870-1A5F-4191-908F-24994AAD2F2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scsl.Drawing", "src\Scsl.Drawing\Scsl.Drawing.csproj", "{4F69B741-73AE-481C-A24B-A4F2DD15D654}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D2E6C2C1-CA42-4FC5-9B7B-19C492A5F02D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scsl.Drawing.UnitTest", "tests\Scsl.Drawing.UnitTest\Scsl.Drawing.UnitTest.csproj", "{110557AD-DDEA-4C92-AAFB-712C05EFF09C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F69B741-73AE-481C-A24B-A4F2DD15D654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F69B741-73AE-481C-A24B-A4F2DD15D654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F69B741-73AE-481C-A24B-A4F2DD15D654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F69B741-73AE-481C-A24B-A4F2DD15D654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{110557AD-DDEA-4C92-AAFB-712C05EFF09C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{110557AD-DDEA-4C92-AAFB-712C05EFF09C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{110557AD-DDEA-4C92-AAFB-712C05EFF09C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{110557AD-DDEA-4C92-AAFB-712C05EFF09C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4F69B741-73AE-481C-A24B-A4F2DD15D654} = {A751A870-1A5F-4191-908F-24994AAD2F2F}
+		{110557AD-DDEA-4C92-AAFB-712C05EFF09C} = {D2E6C2C1-CA42-4FC5-9B7B-19C492A5F02D}
+	EndGlobalSection
+EndGlobal
