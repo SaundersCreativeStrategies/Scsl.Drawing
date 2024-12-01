@@ -1,0 +1,1 @@
+This library leverages the SixLabors.ImageSharp.Web library to efficiently convert PNG, JPG, and JPEG images into the WebP format.
