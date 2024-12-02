@@ -13,14 +13,14 @@
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         
-        <PackageProjectUrl>https://github.com/scsl/Scsl.Drawing</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/SaundersCreativeStrategies/Scsl.Drawing</PackageProjectUrl>
         <PackageTags>convert images, webp, png, jpg, jpeg</PackageTags>
 
         <PackageDescription>
             This library leverages the SixLabors.ImageSharp.Web library to efficiently convert PNG, JPG, and JPEG images into the WebP format.
         </PackageDescription>
         
-        <RepositoryUrl>https://github.com/scsl/Scsl.Drawing.git</RepositoryUrl>
+        <RepositoryUrl>https://github.com/SaundersCreativeStrategies/Scsl.Drawing.git</RepositoryUrl>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <RepositoryType>git</RepositoryType>
         
@@ -28,7 +28,7 @@
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         
         <PackageIcon>scs-logo-600x600.png</PackageIcon>
-        <PackageIconUrl>http://asparatu.net/images/scs-logo-600x600.png</PackageIconUrl>
+        <PackageIconUrl>https://media.asparatu.net/scs-logo-600x600.png</PackageIconUrl>
 
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
