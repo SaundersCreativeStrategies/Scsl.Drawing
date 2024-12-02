@@ -22,6 +22,7 @@ public class IFormFileUnitTests
         stream.Position = 0;
         
         //Creates FormFile
+        // ref: https://stackoverflow.com/questions/73400712/trying-to-set-contenttype-for-formfile-instance-throws-an-exception
         IFormFile file = new FormFile(stream, 0, stream.Length, "Data", fileName)
         {
             Headers = new HeaderDictionary(),
