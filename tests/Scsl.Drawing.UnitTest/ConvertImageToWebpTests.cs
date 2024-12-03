@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Http;
 
 using Moq;
 
+using SixLabors.ImageSharp;
+
 namespace Scsl.Drawing.UnitTest;
 
 #nullable disable
@@ -95,7 +97,7 @@ public class ConvertImageToWebpTests
     }
 
     [TestMethod]
-    public async Task Image_ShouldThrowFormatException_WhenContentTypeIsInvalid()
+    public async Task Image_ShouldThrowUnknownImageFormatException_WhenContentTypeIsInvalid()
     {
         // Arrange
         var formFileMock = new Mock<IFormFile>();
@@ -105,7 +107,7 @@ public class ConvertImageToWebpTests
         var formFile = formFileMock.Object;
 
         // Act & Assert
-        var exception = await Assert.ThrowsExceptionAsync<FormatException>(async () =>
+        var exception = await Assert.ThrowsExceptionAsync<UnknownImageFormatException>(async () =>
         {
             await formFile.ConvertImageToWebpAsync(); // No quality specified, using default
         });
