@@ -11,10 +11,10 @@
     <AssemblyTitle>Scsl.Drawing</AssemblyTitle>
   </PropertyGroup>
   <PropertyGroup>
-    <Version>8.0.10</Version>
-    <AssemblyVersion>8.0.10</AssemblyVersion>
-    <FileVersion>8.0.10.9101</FileVersion>
-    <InformationalVersion>8.0.10</InformationalVersion>
+    <Version>8.0.17</Version>
+    <AssemblyVersion>8.0.17</AssemblyVersion>
+    <FileVersion>8.0.17.9103</FileVersion>
+    <InformationalVersion>8.0.17</InformationalVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="SixLabors.ImageSharp.Web" Version="3.1.3" />
