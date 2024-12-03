@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 using SixLabors.ImageSharp.Formats.Webp;
 
@@ -13,7 +14,7 @@ public static class ConvertToImageTypeExtensions
     /// <param name="quality">The quality of the WebP output, default is 75.</param>
     /// <returns>A <see cref="MemoryStream"/> containing the converted WebP image.</returns>
     /// <exception cref="ArgumentNullException">Thrown if <paramref name="formFile"/> is null.</exception>
-    /// <exception cref="FormatException">Thrown if the file format is not supported.</exception>
+    /// <exception cref="UnknownImageFormatException">Thrown if the file format is not supported.</exception>
     ///  /// <exception cref="FormatException">Thrown if the quantity is not between 1 and 100.</exception>
     public static Task<MemoryStream> ConvertImageToWebpAsync(this IFormFile formFile, int quality = 75)
     {
@@ -21,10 +22,10 @@ public static class ConvertToImageTypeExtensions
         ArgumentNullException.ThrowIfNull(formFile, nameof(formFile));
 
         // Ensure the file is an image by checking its Content-Type; throw an exception if not.
-        if (!formFile.ContentType.StartsWith("image/")) throw new FormatException("File format is not supported.");
+        if (!formFile.ContentType.StartsWith("image/")) throw new UnknownImageFormatException("File format is not supported.");
         
         // Ensure the quality is between 1 and 100; throw an exception if not.
-        if(quality is <= 0 or >= 101) throw new FormatException("Quality must be between 1 and 100.");
+        if(quality is <= 0 or >= 101) throw new FormatException("Quality must be between 1 and 100."); 
         
         // Create a MemoryStream to hold the output WebP image data.
         var ms = new MemoryStream();
@@ -49,7 +50,7 @@ public static class ConvertToImageTypeExtensions
     /// <param name="quality">The quality of the WebP output, default is 75.</param>
     /// <returns>A <see cref="MemoryStream"/> containing the converted WebP image.</returns>
     /// <exception cref="ArgumentNullException">Thrown if <paramref name="formFile"/> is null.</exception>
-    /// <exception cref="FormatException">Thrown if the file format is not supported.</exception>
+    /// <exception cref="UnknownImageFormatException">Thrown if the file format is not supported.</exception>
     ///  /// <exception cref="FormatException">Thrown if the quantity is not between 1 and 100.</exception>
     public static MemoryStream ConvertImageToWebp(this IFormFile formFile, int quality = 75)
     {
